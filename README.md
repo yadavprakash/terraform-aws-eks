@@ -20,7 +20,7 @@ To use this module, you can include it in your Terraform configuration. Here's a
 
 ```hcl
 module "eks" {
-  source      = "git::https://github.com/opsstation/terraform-aws-eks.git?ref=v1.0.0"
+  source      = "git::https://github.com/yadavprakash/terraform-aws-eks.git?ref=v1.0.0"
   enabled     = true
   name        = local.name
   environment = local.environment
@@ -80,7 +80,7 @@ module "eks" {
   apply_config_map_aws_auth = true
   map_additional_iam_users = [
     {
-      userarn  = "arn:aws:iam::123456789:user/opsstation"
+      userarn  = "arn:aws:iam::123456789:user/yadavprakash"
       username = "test"
       groups   = ["system:masters"]
     }
@@ -89,13 +89,13 @@ module "eks" {
 ```
 
 ## Example
-For detailed examples on how to use this module, please refer to the [Examples](https://github.com/opsstation/terraform-aws-eks/blob/master/_examples) directory within this repository.
+For detailed examples on how to use this module, please refer to the [Examples](https://github.com/yadavprakash/terraform-aws-eks/blob/master/_examples) directory within this repository.
 
 ## Author
-Your Name Replace **MIT** and **opsstation** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
+Your Name Replace **MIT** and **yadavprakash** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 ## License
-This project is licensed under the **MIT** License - see the [LICENSE](https://github.com/opsstation/terraform-aws-eks/blob/master/LICENSE) file for details.
+This project is licensed under the **MIT** License - see the [LICENSE](https://github.com/yadavprakash/terraform-aws-eks/blob/master/LICENSE) file for details.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -123,7 +123,7 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_eks_managed_node_group"></a> [eks\_managed\_node\_group](#module\_eks\_managed\_node\_group) | ./node_group/ | n/a |
-| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/opsstation/terraform-aws-labels.git | v1.0.0 |
+| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/yadavprakash/terraform-aws-labels.git | v1.0.0 |
 
 ## Resources
 
@@ -199,7 +199,7 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 | <a name="input_local_exec_interpreter"></a> [local\_exec\_interpreter](#input\_local\_exec\_interpreter) | shell to use for local\_exec | `list(string)` | <pre>[<br>  "/bin/sh",<br>  "-c"<br>]</pre> | no |
 | <a name="input_managed_node_group"></a> [managed\_node\_group](#input\_managed\_node\_group) | Map of eks-managed node group definitions to create | `any` | `{}` | no |
 | <a name="input_managed_node_group_defaults"></a> [managed\_node\_group\_defaults](#input\_managed\_node\_group\_defaults) | Map of eks-managed node group definitions to create | `any` | `{}` | no |
-| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'opsstation'. | `string` | `"opsstation"` | no |
+| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'yadavprakash'. | `string` | `"yadavprakash"` | no |
 | <a name="input_map_additional_aws_accounts"></a> [map\_additional\_aws\_accounts](#input\_map\_additional\_aws\_accounts) | Additional AWS account numbers to add to `config-map-aws-auth` ConfigMap | `list(string)` | `[]` | no |
 | <a name="input_map_additional_iam_roles"></a> [map\_additional\_iam\_roles](#input\_map\_additional\_iam\_roles) | Additional IAM roles to add to `config-map-aws-auth` ConfigMap | <pre>list(object({<br>    rolearn  = string<br>    username = string<br>    groups   = list(string)<br>  }))</pre> | `[]` | no |
 | <a name="input_map_additional_iam_users"></a> [map\_additional\_iam\_users](#input\_map\_additional\_iam\_users) | Additional IAM users to add to `config-map-aws-auth` ConfigMap | <pre>list(object({<br>    userarn  = string<br>    username = string<br>    groups   = list(string)<br>  }))</pre> | `[]` | no |
@@ -210,7 +210,7 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 | <a name="input_outpost_config"></a> [outpost\_config](#input\_outpost\_config) | Configuration for the AWS Outpost to provision the cluster on | `any` | `{}` | no |
 | <a name="input_permissions_boundary"></a> [permissions\_boundary](#input\_permissions\_boundary) | If provided, all IAM roles will be created with this permissions boundary attached. | `string` | `null` | no |
 | <a name="input_public_access_cidrs"></a> [public\_access\_cidrs](#input\_public\_access\_cidrs) | Indicates which CIDR blocks can access the Amazon EKS public API server endpoint when enabled. EKS defaults this to a list with 0.0.0.0/0. | `list(string)` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
-| <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/opsstation/terraform-aws-eks"` | no |
+| <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/yadavprakash/terraform-aws-eks"` | no |
 | <a name="input_schedules"></a> [schedules](#input\_schedules) | Map of autoscaling group schedule to create | `map(any)` | `{}` | no |
 | <a name="input_subnet_ids"></a> [subnet\_ids](#input\_subnet\_ids) | A list of subnet IDs to launch the cluster in. | `list(string)` | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Additional tags (e.g. map(`BusinessUnit`,`XYZ`). | `map(any)` | `{}` | no |
